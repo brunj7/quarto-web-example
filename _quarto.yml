@@ -1,6 +1,5 @@
 project:
   type: website
-  output-dir: docs
 
 website:
   title: "Publishing Quarto websites with GitHub pages"
@@ -22,8 +21,7 @@ website:
 format:
   html:
     theme:
-      - flatly  # cosmo
-      - my_theme.scss
+      - cosmo
     css: styles.css
     toc: true
 

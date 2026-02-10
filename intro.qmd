@@ -47,7 +47,7 @@ website:
       - about.qmd
     right:
       - icon: github
-        href: https://github.com/UCSB-Library-Research-Data-Services/ucldw26-quarto-websites
+        href: https://github.com/brunj7/quarto-web-example
 
 format:
   html:

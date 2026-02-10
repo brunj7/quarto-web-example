@@ -14,6 +14,9 @@ website:
       - href: customize.qmd
         text: "Do it in Style"
       - about.qmd
+    right:
+      - icon: github
+        href: https://github.com/UCSB-Library-Research-Data-Services/ucldw26-quarto-websites
 
 format:
   html:

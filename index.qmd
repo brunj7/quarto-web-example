@@ -1,0 +1,41 @@
+---
+title: "Publishing Quarto websites with GitHub pages"
+---
+
+## Why Quarto? 
+
+[Quarto](https://quarto.org) is an open-source scientific and technical publishing system.  It can be used to create different types of content (single web pages, websites, journal articles, presentations, ...) in different formats (HTML, PDF, Microsoft Word, ...).  We will focus on using Quarto to create a website in this workshop.
+
+But there are lots tools for creating websites.  Why use Quarto?  Here are some of our favorite reasons:
+
+- The software is open source
+- Sites are created by editing simple text files (e.g., markdown files)
+- Lots of features are available which are easily enabled
+- Sites look good out of the box
+- But customizing further is relatively easy
+- Publishing and hosting via GitHub Pages is drop-dead easy, and free to boot!
+- The use of simple text files and GitHub meshes perfectly with using git for collaboration and version control
+
+
+## A few examples
+
+Here are a few different types of Quarto websites:
+
+- Personal website: <https://brunj7.github.io/>
+- Blog based format: <https://github.com/realworlddatascience/realworlddatascience.github.io/tree/main>
+- Teaching materials: <https://ucsb-meds.github.io/creating-quarto-websites>
+- Dashboard: <https://quarto.org/docs/gallery/#dashboards>
+
+
+## Quarto can do more!
+
+Quarto is really a full system of analytical content that can produce many different types of documents! Checkout our [Quarto Showcase](https://ucsb-library-research-data-services.github.io/ucldw25-quarto-showcase/quarto_intro.html) from last year UC Love Data Week!
+
+
+## Further Readings
+
+- Curated list of awesome quarto content and tutorials: <https://github.com/mcanouil/awesome-quarto>
+- Sam's tutorial: <https://ucsb-meds.github.io/creating-quarto-websites>
+- Official Quarto Documentation for websites: <https://quarto.org/docs/websites/>
+- Official Quarto Documentation to publish on GitHub Pages <https://quarto.org/docs/publishing/github-pages.html>
+- Short video series on creating a Quarto website: <https://www.youtube.com/playlist?list=PLitrm9Undxcu7eExaTg9Y-JYLv9O6uxGu>

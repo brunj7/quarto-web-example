@@ -1,0 +1,26 @@
+project:
+  type: website
+
+website:
+  title: "Publishing Quarto websites with GitHub pages"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Intro
+      - href: intro.qmd
+        text: "Quarto Websites" 
+      - href: github.qmd
+        text: "Publish on GitHub"
+      - href: customize.qmd
+        text: "Do it in Style"
+      - about.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+    css: styles.css
+    toc: true
+
+
+

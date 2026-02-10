@@ -1,0 +1,128 @@
+---
+title: "Hosting on GitHub Pages"
+---
+
+You can use GitHub pages to host your website for free! Every time you push new content, your website will update within 
+a few minutes!! There are different workflows available for this setup. In this workshop, we are opting to save the rendered 
+html files to a `docs` folder on the main branch of our repository, which is a naming convention that GitHub uses to point
+to content for GitHub pages.
+
+
+| Approach  | Pro  | Con  |
+|----------|--------| --------|
+| folder   | Easy to setup   | You need to make sure to first render and commit changes locally |
+| folder   | Better control when to render the website | More "busy" commits |
+| branch   | Automatic rendering on push  | Setup requires to know (some) GitHub Actions syntax |
+| branch   | better separation of Quarto and html files  | Rendering can be slow |
+
+: Approaches main pros and cons {.hover}
+
+<br>
+
+
+## Using the `docs` folder  
+
+1. **Setup the `docs` subfolder**:  
+In your project folder on your machine, create a docs subfolder. Then edit the `_quarto.yml` to specify we want to render
+content into this `docs` folder by setting up the ` output-dir` parameter
+
+```yaml
+    project:
+      type: website
+      output-dir: docs
+    
+    website:
+      title: "Publishing Quarto websites with GitHub pages"
+      navbar:
+       ...
+```
+2. **Disable GitHub Pages automatic rendering**:
+Add a `.nojekyll` empty file at the root/top level of your repository. You can use any text editor (including RStudio or VS code) or the command line: `touch .nojekyll`
+
+3. **Render your website locally**:   
+Use either your favorite Integrated Development Environment (IDE) or running `quarto::quarto_render()` at the R console. 
+
+4. Upload your website to GitHub:  
+Commit and Push the `docs` folder to your remote repository on GitHub
+
+5. **Setup GitHub Pages**:   
+On the GitHub website, navigate to your repository page and click on `Settings` tab and choose `Pages` on the left panel
+and select the `./docs/` folder and save:
+![](img/gh-pages_docs.png){width=80% fig-align="center"}
+
+6.**Add your website URL** to your repo:  
+Go back to the main page of your repository and in the right panel, click on the wheel for settings. Add the link of your
+website to your repository by checking the box `Use your GitHub Pages website`:
+
+![](img/gh-add_url.png){width=70% fig-align="center"}
+
+
+## Using the `gh-pages` branch  
+
+You can also make GitHub render your Quarto website! It is a more automated workflow, however, it will require you to dig
+into GitHub Actions scripting. To do so, you will have to create a special branch named `gh-pages` 
+and write a GitHub Action. Here is the one we used for this website:
+
+1. **Create a `gh-pages` branch**  
+
+2. **Setup the branch** to host your website:
+On your repository homepage, click the `Settings` tab and choose `Pages` on the left panel and select `gh-pages` branch and
+the `/(root)/` folder and save:
+![](img/gh-pages_branch.png){width=70% fig-align="center"}
+
+3. **Add a new GitHub Action workflow**: 
+Go back to the main page of your repository and click the `Actions` tab and hit the "New workflow" button.
+![](img/gh-action_add.png){width=70% fig-align="center"}
+
+   On the next page with several predefined workflows, click on `Skip this and set up a workflow yourself →`
+
+4. **Add the GitHub Action code**:  
+
+```yaml
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Install R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.5.1'
+          
+      - name: Install R Dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages:
+            any::knitr
+            any::rmarkdown
+            any::lterdatasampler
+            any::tidyverse
+            any::plotly
+            any::sf
+            any::leaflet
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+
+***Now every time you push to GitHub, your website will render automatically!!***
+

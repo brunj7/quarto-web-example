@@ -1,0 +1,88 @@
+---
+title: "Do it in Style"
+---
+
+
+## Themes
+
+[Bootswatch](https://bootswatch.com/){target="_blank"} is a free collection of 25 themes for [Bootstrap](https://getbootstrap.com/), the popular front-end frameworks that Quarto relies on by default to render websites. You can easily change the style of your website by using one of these 25 pre-defined [themes](https://quarto.org/docs/output-formats/html-themes.html){target="_blank"}.
+
+Let's try the `flatly` theme. We need to update `_quarto.yml` so the bottom looks like this:
+
+``` yaml
+...
+
+format:
+  html:
+    theme:
+      - flatly  #cosmo
+    css: styles.css
+    toc: true
+```
+
+::: callout-tip
+Don't forget to save your changes before rendering!!
+:::
+
+## Modify your website look with CSS
+
+You also have other ways to customize further those default themes. For example you can use the Cascading Style Sheets 
+or `CSS` to add specific rules to specific elements of your website. By default when you create a quarto website project
+in RStudio, it will create a file named `style.css` and add it to your styling options in `_quarto.yml`. This css file 
+is empty by default. Let's add some content to modify our headers of level 2 to be green and have more space between letters
+
+``` css
+/* css styles */
+
+h2 {
+  color: orange;
+  letter-spacing: 5px;
+}
+```
+
+### Create your own theme with **S**yntactically **A**wesome **S**tyle**s**heets (Sass)
+
+Sass extends existing CSS features in a number of exciting ways, but importantly reduces repetition. You can use `.scss` stylesheet file(s) to define Sass variables to quickly customize your website’s theme. Sass variables are defined in the form `$var-name: value;`. Then you can use those variables to assign style to elements (that quarto has predefined). For example, let's make our navigation bar purple:
+
+``` css
+/*-- scss:defaults --*/
+
+// colors
+$purple: #800080;        /* define the variable purple as a color */
+$navbar-bg: $purple;     /* use this variable to change navbar background */
+
+// import Google font-size
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Nunito:wght@300;800&family=Roboto+Mono:wght@300;400&family=Sanchez&display=swap');
+
+// fonts
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-serif: 'Sanchez', serif;
+$font-family-monospace: 'Roboto Mono', monospace;
+```
+
+And modify the `_quarto.yml` as follow:
+
+``` yaml
+...
+
+format:
+  html:
+    theme:
+      - cosmo  #flatly
+      - mytheme.scss
+    css: styles.css
+    toc: true
+```
+
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaThpNzlrd3pxNjJydTE4MnBnNjE2ZTQ4ZDdkbTNzeGltNmtxcmNjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L40sNfcoJs5Op5afQU/giphy.gif){fig-align="center"}
+
+
+## Further reading
+
+-   Creating a Quarto website: <https://quarto.org/docs/websites/>
+-   Quarto publishing documentation: <https://quarto.org/docs/publishing/github-pages.html>
+-   Quarto website video series: <https://quarto.org/docs/blog/posts/2024-12-04-websites-workshop/>
+-   Sam Shanny-Csik's publishing your personal website: <https://ucsb-meds.github.io/creating-quarto-websites/>
+-   Sam's styling tips: <https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide>
+-   Want more cat pictures? Visit the cat API <https://thecatapi.com/>

@@ -1,0 +1,149 @@
+[
+  {
+    "objectID": "customize.html",
+    "href": "customize.html",
+    "title": "Do it in Style",
+    "section": "",
+    "text": "Bootswatch is a free collection of 25 themes for Bootstrap, the popular front-end frameworks that Quarto relies on by default to render websites. You can easily change the style of your website by using one of these 25 pre-defined themes.\nLet’s try the flatly theme. We need to update _quarto.yml so the bottom looks like this:\n...\n\nformat:\n  html:\n    theme:\n      - flatly  #cosmo\n    css: styles.css\n    toc: true\n\n\n\n\n\n\nTip\n\n\n\nDon’t forget to save your changes before rendering!!"
+  },
+  {
+    "objectID": "customize.html#themes",
+    "href": "customize.html#themes",
+    "title": "Do it in Style",
+    "section": "",
+    "text": "Bootswatch is a free collection of 25 themes for Bootstrap, the popular front-end frameworks that Quarto relies on by default to render websites. You can easily change the style of your website by using one of these 25 pre-defined themes.\nLet’s try the flatly theme. We need to update _quarto.yml so the bottom looks like this:\n...\n\nformat:\n  html:\n    theme:\n      - flatly  #cosmo\n    css: styles.css\n    toc: true\n\n\n\n\n\n\nTip\n\n\n\nDon’t forget to save your changes before rendering!!"
+  },
+  {
+    "objectID": "customize.html#modify-your-website-look-with-css",
+    "href": "customize.html#modify-your-website-look-with-css",
+    "title": "Do it in Style",
+    "section": "Modify your website look with CSS",
+    "text": "Modify your website look with CSS\nYou also have other ways to customize further those default themes. For example you can use the Cascading Style Sheets or CSS to add specific rules to specific elements of your website. By default when you create a quarto website project in RStudio, it will create a file named style.css and add it to your styling options in _quarto.yml. This css file is empty by default. Let’s add some content to modify our headers of level 2 to be green and have more space between letters\n/* css styles */\n\nh2 {\n  color: orange;\n  letter-spacing: 5px;\n}\n\nCreate your own theme with Syntactically Awesome Stylesheets (Sass)\nSass extends existing CSS features in a number of exciting ways, but importantly reduces repetition. You can use .scss stylesheet file(s) to define Sass variables to quickly customize your website’s theme. Sass variables are defined in the form $var-name: value;. Then you can use those variables to assign style to elements (that quarto has predefined). For example, let’s make our navigation bar purple:\n/*-- scss:defaults --*/\n\n// colors\n$purple: #800080;        /* define the variable purple as a color */\n$navbar-bg: $purple;     /* use this variable to change navbar background */\n\n// import Google font-size\n@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Nunito:wght@300;800&family=Roboto+Mono:wght@300;400&family=Sanchez&display=swap');\n\n// fonts\n$font-family-sans-serif: 'Nunito', sans-serif;\n$font-family-serif: 'Sanchez', serif;\n$font-family-monospace: 'Roboto Mono', monospace;\nAnd modify the _quarto.yml as follow:\n...\n\nformat:\n  html:\n    theme:\n      - cosmo  #flatly\n      - mytheme.scss\n    css: styles.css\n    toc: true"
+  },
+  {
+    "objectID": "customize.html#further-reading",
+    "href": "customize.html#further-reading",
+    "title": "Do it in Style",
+    "section": "Further reading",
+    "text": "Further reading\n\nCreating a Quarto website: https://quarto.org/docs/websites/\nQuarto publishing documentation: https://quarto.org/docs/publishing/github-pages.html\nQuarto website video series: https://quarto.org/docs/blog/posts/2024-12-04-websites-workshop/\nSam Shanny-Csik’s publishing your personal website: https://ucsb-meds.github.io/creating-quarto-websites/\nSam’s styling tips: https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide\nWant more cat pictures? Visit the cat API https://thecatapi.com/"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Publishing Quarto websites with GitHub pages",
+    "section": "",
+    "text": "Quarto is an open-source scientific and technical publishing system. It can be used to create different types of content (single web pages, websites, journal articles, presentations, …) in different formats (HTML, PDF, Microsoft Word, …). We will focus on using Quarto to create a website in this workshop.\nBut there are lots tools for creating websites. Why use Quarto? Here are some of our favorite reasons:\n\nThe software is open source\nSites are created by editing simple text files (e.g., markdown files)\nLots of features are available which are easily enabled\nSites look good out of the box\nBut customizing further is relatively easy\nPublishing and hosting via GitHub Pages is drop-dead easy, and free to boot!\nThe use of simple text files and GitHub meshes perfectly with using git for collaboration and version control"
+  },
+  {
+    "objectID": "index.html#why-quarto",
+    "href": "index.html#why-quarto",
+    "title": "Publishing Quarto websites with GitHub pages",
+    "section": "",
+    "text": "Quarto is an open-source scientific and technical publishing system. It can be used to create different types of content (single web pages, websites, journal articles, presentations, …) in different formats (HTML, PDF, Microsoft Word, …). We will focus on using Quarto to create a website in this workshop.\nBut there are lots tools for creating websites. Why use Quarto? Here are some of our favorite reasons:\n\nThe software is open source\nSites are created by editing simple text files (e.g., markdown files)\nLots of features are available which are easily enabled\nSites look good out of the box\nBut customizing further is relatively easy\nPublishing and hosting via GitHub Pages is drop-dead easy, and free to boot!\nThe use of simple text files and GitHub meshes perfectly with using git for collaboration and version control"
+  },
+  {
+    "objectID": "index.html#a-few-examples",
+    "href": "index.html#a-few-examples",
+    "title": "Publishing Quarto websites with GitHub pages",
+    "section": "A few examples",
+    "text": "A few examples\nHere are a few different types of Quarto websites:\n\nPersonal website: https://brunj7.github.io/\nBlog based format: https://github.com/realworlddatascience/realworlddatascience.github.io/tree/main\nTeaching materials: https://ucsb-meds.github.io/creating-quarto-websites\nDashboard: https://quarto.org/docs/gallery/#dashboards"
+  },
+  {
+    "objectID": "index.html#quarto-can-do-more",
+    "href": "index.html#quarto-can-do-more",
+    "title": "Publishing Quarto websites with GitHub pages",
+    "section": "Quarto can do more!",
+    "text": "Quarto can do more!\nQuarto is really a full system of analytical content that can produce many different types of documents! Checkout our Quarto Showcase from last year UC Love Data Week!"
+  },
+  {
+    "objectID": "index.html#further-readings",
+    "href": "index.html#further-readings",
+    "title": "Publishing Quarto websites with GitHub pages",
+    "section": "Further Readings",
+    "text": "Further Readings\n\nCurated list of awesome quarto content and tutorials: https://github.com/mcanouil/awesome-quarto\nSam’s tutorial: https://ucsb-meds.github.io/creating-quarto-websites\nOfficial Quarto Documentation for websites: https://quarto.org/docs/websites/\nOfficial Quarto Documentation to publish on GitHub Pages https://quarto.org/docs/publishing/github-pages.html\nShort video series on creating a Quarto website: https://www.youtube.com/playlist?list=PLitrm9Undxcu7eExaTg9Y-JYLv9O6uxGu"
+  },
+  {
+    "objectID": "github.html",
+    "href": "github.html",
+    "title": "Hosting on GitHub Pages",
+    "section": "",
+    "text": "You can use GitHub pages to host your website for free! Every time you push new content, your website will update within a few minutes!! There are different workflows available for this setup. In this workshop, we are opting to save the rendered html files to a docs folder on the main branch of our repository, which is a naming convention that GitHub uses to point to content for GitHub pages."
+  },
+  {
+    "objectID": "github.html#using-the-docs-folder",
+    "href": "github.html#using-the-docs-folder",
+    "title": "Hosting on GitHub Pages",
+    "section": "Using the docs folder",
+    "text": "Using the docs folder\n\nSetup the docs subfolder:\nIn your project folder on your machine, create a docs subfolder. Then edit the _quarto.yml to specify we want to render content into this docs folder by setting up the output-dir parameter\n\n    project:\n      type: website\n      output-dir: docs\n    \n    website:\n      title: \"Publishing Quarto websites with GitHub pages\"\n      navbar:\n       ...\n\nDisable GitHub Pages automatic rendering: Add a .nojekyll empty file at the root/top level of your repository. You can use any text editor (including RStudio or VS code) or the command line: touch .nojekyll\nRender your website locally:\nUse either your favorite Integrated Development Environment (IDE) or running quarto::quarto_render() at the R console.\nUpload your website to GitHub:\nCommit and Push the docs folder to your remote repository on GitHub\nSetup GitHub Pages:\nOn the GitHub website, navigate to your repository page and click on Settings tab and choose Pages on the left panel and select the ./docs/ folder and save: \n\n6.Add your website URL to your repo:\nGo back to the main page of your repository and in the right panel, click on the wheel for settings. Add the link of your website to your repository by checking the box Use your GitHub Pages website:"
+  },
+  {
+    "objectID": "github.html#using-the-gh-pages-branch",
+    "href": "github.html#using-the-gh-pages-branch",
+    "title": "Hosting on GitHub Pages",
+    "section": "Using the gh-pages branch",
+    "text": "Using the gh-pages branch\nYou can also make GitHub render your Quarto website! It is a more automated workflow, however, it will require you to dig into GitHub Actions scripting. To do so, you will have to create a special branch named gh-pages and write a GitHub Action. Here is the one we used for this website:\n\nCreate a gh-pages branch\nSetup the branch to host your website: On your repository homepage, click the Settings tab and choose Pages on the left panel and select gh-pages branch and the /(root)/ folder and save: \nAdd a new GitHub Action workflow: Go back to the main page of your repository and click the Actions tab and hit the “New workflow” button. \nOn the next page with several predefined workflows, click on Skip this and set up a workflow yourself →\nAdd the GitHub Action code:\n\non:\n  workflow_dispatch:\n  push:\n    branches: main\n\nname: Quarto Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v3\n\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Install R\n        uses: r-lib/actions/setup-r@v2\n        with:\n          r-version: '4.5.1'\n          \n      - name: Install R Dependencies\n        uses: r-lib/actions/setup-r-dependencies@v2\n        with:\n          packages:\n            any::knitr\n            any::rmarkdown\n            any::lterdatasampler\n            any::tidyverse\n            any::plotly\n            any::sf\n            any::leaflet\n\n      - name: Render and Publish\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\nNow every time you push to GitHub, your website will render automatically!!"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Quarto Website",
+    "section": "",
+    "text": "Art by Allison Horst"
+  },
+  {
+    "objectID": "intro.html#quarto-workflow",
+    "href": "intro.html#quarto-workflow",
+    "title": "Quarto Website",
+    "section": "",
+    "text": "Art by Allison Horst"
+  },
+  {
+    "objectID": "intro.html#structure-of-a-quarto-document",
+    "href": "intro.html#structure-of-a-quarto-document",
+    "title": "Quarto Website",
+    "section": "Structure of a Quarto document",
+    "text": "Structure of a Quarto document\n\n3 basic components:\n\nMetadata (YAML aka Yet Another Markup Language)\nText for documentation (markdown + other few tricks)\nCode (chunks) with your analysis (R and friends)"
+  },
+  {
+    "objectID": "intro.html#structure-of-a-quarto-website",
+    "href": "intro.html#structure-of-a-quarto-website",
+    "title": "Quarto Website",
+    "section": "Structure of a Quarto website",
+    "text": "Structure of a Quarto website\nFor a website, each webpage is going to be its separate quarto document. To create a website, you need one extra YAML file that will stitch all those pages together. Enters: _quarto.yml\n_quarto.yml can be seen as a config file that provides website options, such as style, name, navigation tools and more. Here is its content for this website:\nproject:\n  type: website\n  output-dir: docs\n\nwebsite:\n  title: \"Publishing Quarto websites with GitHub pages\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Intro\n      - href: intro.qmd\n        text: \"Quarto Websites\" \n      - href: github.qmd\n        text: \"Publish on GitHub\"\n      - href: customize.qmd\n        text: \"Do it in Style\"\n      - about.qmd\n    right:\n      - icon: github\n        href: https://github.com/UCSB-Library-Research-Data-Services/ucldw26-quarto-websites\n\nformat:\n  html:\n    theme:\n      - cosmo\n    css: styles.css\n    toc: true"
+  },
+  {
+    "objectID": "intro.html#images",
+    "href": "intro.html#images",
+    "title": "Quarto Website",
+    "section": "Images",
+    "text": "Images\nDid somebody say cat?? Sorry cute cat?! You can insert an image using the markdown syntax: ![Fig caption](path/to/image)\n\n\n\nA cat upside down\n\n\n\nYou can also customize alignment, size and more… add options with {fig-align=\"right\" width=50%}\n\n\n\nA smaller cute cat upside down… on the right"
+  },
+  {
+    "objectID": "intro.html#how-about-some-math",
+    "href": "intro.html#how-about-some-math",
+    "title": "Quarto Website",
+    "section": "How about some math?",
+    "text": "How about some math?\nYou can insert LaTeX math expressions into your page or document. What’s particularly nice about Quarto is that you can use the math formatting from LaTeX without having to buy into the entire LaTeX environment. For example, you might want remind your readers that\n\\[e = \\lim _{n\\to \\infty }\\left(1+{\\frac {1}{n}}\\right)^{n}\\]\nand it’s also true that\n\\[e=\\sum \\limits _{n=0}^{\\infty }{\\frac {1}{n!}}=1+{\\frac {1}{1}}+{\\frac {1}{1\\cdot 2}}+{\\frac {1}{1\\cdot 2\\cdot 3}}+\\cdots\\]\nAnd don’t forget that \\(e^{i\\pi} = -1\\)."
+  },
+  {
+    "objectID": "intro.html#adding-code",
+    "href": "intro.html#adding-code",
+    "title": "Quarto Website",
+    "section": "Adding code",
+    "text": "Adding code\nSo I can build a website that leverages R (or Python) code!?\nYep!! And as with any other R script, it is good practice to start by loading the libraries you are going to need for your analysis / website content.\n\nLoad your libraries\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.0     ✔ readr     2.1.6\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.2     ✔ tibble    3.3.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.2\n✔ purrr     1.2.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(lterdatasampler)\n\nMmm… this is a lot of information we would like to hide.\n\n\nTake two\nAdding an execution option: #| message: false to the code chunk will let us hide the warning messages when rendering the document\n\nlibrary(tidyverse)\nlibrary(lterdatasampler)\n\nYeah!!!\nMore on output options: https://quarto.org/docs/computations/execution-options.html#output-options\n\n\nFirst plot\nThe Long Term Ecological Research (LTER) North Temperate Lakes (Madison, WI) research site has one of the longest time-series of Temperatures and Lake Ice Duration. The study and analysis of lake ice formation can inform scientists about how quickly the climate is changing, and are critical to minimizing disruptions to lake ecosystems. We can examine the ice duration of Lake Mendota and Lake Monona.\nBTW you can add callout blocks super easily!!\n\n\n\n\n\n\nTipFun Fact\n\n\n\nDid you know that Joni Mitchell’s album “Hejira” art is her skating on Lake Mendota in 1976 !? https://wisconsinlife.org/story/joni-mitchell-skates-on-lake-mendota-and-into-music-history/\n\n\nMore on callout blocks: https://quarto.org/docs/authoring/callouts.html\nHere is the code chunk for our first plot using ggplot2:\n\nice_duration &lt;-\n  ggplot(data = ntl_icecover, aes(x = year)) +\n  geom_line(aes(y = ice_duration, color = lakeid), alpha = 0.7) +\n  theme_minimal() +\n  labs(x = \"Year\", y = \"Ice Duration (Days)\", title = \"Ice Duration of Lakes in the Madison, WI Area\", subtitle = \"North Temperate Lakes LTER\")\n\nice_duration\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_line()`).\n\n\n\n\n\n\n\n\n\n\n\nWe might want to hide the code\nOf course there is an option for that: #| echo: false\n\n\n\n\n\n\n\n\n\n\n\nOr collapse it\nTry #| code-fold: true if you want to get fancy\n\n\nCode\nice_duration &lt;-\n  ggplot(data = ntl_icecover, aes(x = year)) +\n  geom_line(aes(y = ice_duration, color = lakeid), alpha = 0.7) +\n  theme_minimal() +\n  labs(x = \"Year\", y = \"Ice Duration (Days)\", title = \"Ice Duration of Lakes in the Madison, WI Area\", subtitle = \"North Temperate Lakes LTER\")\n\nice_duration\n\n\n\n\n\n\n\n\n\nmore on code chunk options here: https://quarto.org/docs/output-formats/html-code.html"
+  },
+  {
+    "objectID": "intro.html#html-widgets",
+    "href": "intro.html#html-widgets",
+    "title": "Quarto Website",
+    "section": "HTML widgets",
+    "text": "HTML widgets\n\nAdd an interactive plot\n\nlibrary(plotly)\n\nice_duration %&gt;% ggplotly()\n\n\n\n\n\n\n\nAdd a map\nResearchers at the Niwot Ridge Long Term Ecological Research Site (NWT LTER) seek to study and monitor the health of the Colorado Rockies over time. Because of external factors like climate change, it’s more important than ever for scientists to understand how and why the Rockies are changing.\nThe American pika (Ochotona princeps) is a key species present at the NWT LTER. Despite their small size, pikas can be very informative about the health of the ecosystem. If pikas are more stressed, it can suggest that their habitat has declined in quality.\n\n\n\nAdult pika at the Niwot site, Sara McLaughlin\n\n\n\n\nLocation of Pika Sampling Stations\n\nlibrary(sf)\nlibrary(leaflet)\n\n# Prepare the data\npikas_sf &lt;- st_as_sf(x = nwt_pikas, coords = c(\"utm_easting\", \"utm_northing\")) %&gt;% \n  st_set_crs(\"EPSG:26913\") %&gt;% \n  st_transform(\"EPSG:4326\")\n\n# Set the bounding box for the map\nleaflet() %&gt;% \n  addTiles() %&gt;% \n  addCircles(data = pikas_sf, label = ~station)\n\n\n\n\n\nNote: it is best practice to load all your libraries at the top of your Quarto document. Here we chose to do it out of order to highlight which package is used for each html widgets"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Research Data Services (RDS) helps UCSB researchers manage and preserve their research data through:\n\nConsultations\nLong-term engagements\nInstructional workshops\n\nOur team offers support across the research data lifecycle, from pre-project planning to post-project archival, connecting researchers with both locally- and externally-provided curation services. Our goal is to ensure that all research data is well-described, FAIR (Findable, Accessible, Interoperable, Reusable), and sustainably preservable, and that researchers receive scholarly credit for sharing and publishing data.\nContact us if you have any questions: rds@library.ucsb.edu"
+  }
+]

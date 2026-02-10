@@ -1,0 +1,13 @@
+/*-- scss:defaults --*/
+
+// colors
+$purple: #800080;        /* define the variable purple as a color */
+$navbar-bg: $purple;     /* use this variable to change navbar background */
+
+// import Google font-size
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Nunito:wght@300;800&family=Roboto+Mono:wght@300;400&family=Sanchez&display=swap');
+
+// fonts
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-serif: 'Sanchez', serif;
+$font-family-monospace: 'Roboto Mono', monospace;
